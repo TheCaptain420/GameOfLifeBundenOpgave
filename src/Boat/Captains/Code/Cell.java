@@ -5,20 +5,23 @@ public class Cell {
     boolean alive = false;
     boolean almostAlive ;
 
-    Cell(){
+    Cell(char alive){
 
-        alive=alive;
+        if(alive =='a'){this.alive=true;
+            System.out.println("Cell created");}
+        if(alive =='d'){this.alive=false;}
+
     }
 
-    public void update(int livingNeighboursPar){
+    public void update(){
 
         if(alive ==true){
             //survival
-            if(livingNeighboursPar==2){
+            if(livingNeighbours==2){
                 this.alive = true;
             }
             //survival
-            else if (livingNeighboursPar == 3){
+            else if (livingNeighbours == 3){
                 this.alive = true;
             }
             //death
@@ -30,7 +33,7 @@ public class Cell {
 
         if(alive == false) {
             //birth
-            if (livingNeighboursPar == 3) {
+            if (livingNeighbours == 3) {
                 this.alive = true;
             }
 
@@ -47,7 +50,7 @@ public class Cell {
     }
 
     public void setLivingNeighbours(int livingNeighbours) {
-        this.livingNeighbours = livingNeighbours;
+        this.livingNeighbours += livingNeighbours;
     }
 
     public boolean isAlive() {
