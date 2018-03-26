@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Game {
     public static void main(String[] args) {
 
+        /////DEN BLIVER BARE VED MED AT + Living Neigbours, istedet for at tælle hvor mange der er. fix it..
 
 
         Cell[][] gamesArray = new Cell[10][10];
