@@ -3,9 +3,8 @@ package Boat.Captains.Code;
 public class Cell {
     int livingNeighbours;
     boolean alive = false;
-    boolean almostAlive ;
 
-    Cell(char alive){
+    public Cell(char alive){
 
         if(alive =='a'){this.alive=true;
             System.out.println("Cell created");}
@@ -39,6 +38,8 @@ public class Cell {
 
         }
 
+        this.livingNeighbours = 0;
+
 
     }
 
@@ -51,6 +52,9 @@ public class Cell {
 
     public void setLivingNeighbours(int livingNeighbours) {
         this.livingNeighbours += livingNeighbours;
+    }
+    void resetLivingNeighbours(){
+        this.livingNeighbours = 0;
     }
 
     public boolean isAlive() {

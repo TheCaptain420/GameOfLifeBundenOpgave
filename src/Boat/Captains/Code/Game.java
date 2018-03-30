@@ -5,21 +5,21 @@ import java.util.ArrayList;
 public class Game {
     public static void main(String[] args) {
 
-        /////DEN BLIVER BARE VED MED AT + Living Neigbours, istedet for at tælle hvor mange der er. fix it..
-
-
-        Cell[][] gamesArray = new Cell[10][10];
-        ArrayList<Cell> cellArrayList = new ArrayList<>();
-
-        //Creating the cells !!!HAS TO BE MOVED
-        gamesArray[5][5] = new Cell('a');
-        gamesArray[4][5] = new Cell('a');
-        gamesArray[4][4] = new Cell('a');
-        gamesArray[5][6] = new Cell('a');
+        //Functer som en slags database
+        GettableInfo gettableInfo = new GettableInfo();
+        //Kalder databasen
+        Cell[][] gamesArray = gettableInfo.creatingTheArray();
+        //Fylder gamesArray op.
+        gettableInfo.fillACell(5,5);
+        gettableInfo.fillACell(2,5);
+        gettableInfo.fillACell(4,4);
+        gettableInfo.fillACell(5,6);
 
 
 
-        GoThrough goThrough = new GoThrough(gamesArray,cellArrayList);
+        //Fortæller at goth skal gå igennem gamesarray
+        GoThrough goThrough = new GoThrough(gamesArray);
+        //går igennem den.
         goThrough.updateState();
 
 

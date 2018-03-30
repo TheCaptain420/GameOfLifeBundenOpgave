@@ -7,7 +7,7 @@ public class PrintInConsole {
 
     //Klasse der printer hele skidtet i consolen
 
-    void printerino(Cell[][] gamesArray){
+    public void printerino(Cell[][] gamesArray){
         for (int i = 0; i < lengthSide-1 ; i++) {
             for (int j = 0; j <(lengthUpDown-1) ; j++) {
                 if (gamesArray[i][j].isAlive()){System.out.print("X ");}
@@ -15,5 +15,9 @@ public class PrintInConsole {
             }
             System.out.println(" ");
         }
+    }
+
+    public String printerinoNotInSout(){
+        return "hello";
     }
 }

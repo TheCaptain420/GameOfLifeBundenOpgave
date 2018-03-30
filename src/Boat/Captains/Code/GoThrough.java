@@ -12,42 +12,43 @@ public class GoThrough {
     int lengthSide = GettableInfo.lengthSide;
     int lengthUpDown = GettableInfo.lengthSide;
 
-    PrintInConsole printInConsole = new PrintInConsole();
+    private PrintInConsole printInConsole = new PrintInConsole();
 
     int counter=0;
 
 
 
-    GoThrough(Cell[][] gamesArray, ArrayList arrayList){
+    public GoThrough(Cell[][] gamesArray){
         this.gamesArray = gamesArray;
     }
 
 
-    void creation(){
+    public void creation(Cell[][] gamesArrayet){
         //Sikrer sig at den kun bliver kørt en gang
         if(this.counter<1){
 
             //Fill array with dead cells
             for (int i = 0; i < lengthSide-1 ; i++) {
                 for (int j = 0; j < lengthUpDown-1 ; j++) {
-                    gamesArray[i][j]=new Cell('d');
+                    gamesArrayet[i][j]=new Cell('d');
                 }
             }
             //Smider nogen nye Cells ind
-            gamesArray[5][5] = new Cell('a');
-            gamesArray[4][5] = new Cell('a');
-            gamesArray[4][4] = new Cell('a');
-            gamesArray[5][6] = new Cell('a');
+            /*gamesArray[6][5] = new Cell('a');
+            gamesArray[1][5] = new Cell('a');
+            gamesArray[2][4] = new Cell('a');
+            gamesArray[2][6] = new Cell('a');*/
             this.counter++;
         }else{
             System.out.println("--Creation has been run before-- ");
         }
     }
-    void updateState(){
+    public void updateState(){
 
         creation();
 
         //Printer i console
+
         printInConsole.printerino(gamesArray);
 
 
