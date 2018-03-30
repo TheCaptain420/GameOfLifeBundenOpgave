@@ -33,18 +33,16 @@ public class GUIController {
 
     //Fortæller at goth skal gå igennem gamesarray
 
-
-    Cell[][] gamesArray;
-    GoThrough goThrough = new GoThrough(this.gamesArray);
-    //Functer som en slags database
     GettableInfo gettableInfo = new GettableInfo();
+
+    Cell[][] gamesArray = gettableInfo.creatingTheArray();
+
+    GoThrough goThrough = new GoThrough(this.gamesArray);
 
     @FXML
     private void handleButtonAction(ActionEvent e) {
         if(e.getSource()==btn_startthewholething){
-
             //Kalder databasen
-            this.gamesArray = gettableInfo.creatingTheArray();
             //Fylder gamesArray op.
             gettableInfo.fillACell(5,5);
             gettableInfo.fillACell(2,5);

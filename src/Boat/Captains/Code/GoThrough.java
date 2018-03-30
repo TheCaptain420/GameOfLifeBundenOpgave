@@ -45,7 +45,7 @@ public class GoThrough {
     }
     public void updateState(){
 
-        creation();
+        creation(gamesArray);
 
         //Printer i console
 
