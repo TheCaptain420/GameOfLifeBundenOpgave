@@ -1,9 +1,6 @@
 package Boat.Captains.GUI;
 
-import Boat.Captains.Code.Cell;
-import Boat.Captains.Code.GettableInfo;
-import Boat.Captains.Code.GoThrough;
-import Boat.Captains.Code.PrintInConsole;
+import Boat.Captains.Code.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,19 +32,23 @@ public class GUIController {
 
     GettableInfo gettableInfo = new GettableInfo();
 
-    Cell[][] gamesArray = gettableInfo.creatingTheArray();
 
-    GoThrough goThrough = new GoThrough(this.gamesArray);
+    //Cell[][] gamesArray = gettableInfo.creatingTheArray();
+
+    GoThrough goThrough = new GoThrough();
 
     @FXML
     private void handleButtonAction(ActionEvent e) {
         if(e.getSource()==btn_startthewholething){
             //Kalder databasen
             //Fylder gamesArray op.
-            gettableInfo.fillACell(5,5);
-            gettableInfo.fillACell(2,5);
-            gettableInfo.fillACell(4,4);
-            gettableInfo.fillACell(5,6);
+            goThrough.updateState(Singleton.getGamesArray());
+            Singleton.makeCellAlive(5,5);
+            Singleton.makeCellAlive(2,3);
+            Singleton.makeCellAlive(3,4);
+            Singleton.makeCellAlive(3,5);
+
+
             theTextArea.setText("hello");
 
         }
@@ -55,7 +56,7 @@ public class GUIController {
         if (e.getSource()==btn_next){
             //går igennem den.
 
-            goThrough.updateState();
+            goThrough.updateState(Singleton.getGamesArray());
         }
 
     }

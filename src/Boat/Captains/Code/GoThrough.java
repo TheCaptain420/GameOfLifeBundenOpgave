@@ -7,7 +7,6 @@ public class GoThrough {
 
     //En klasse der går igennem arrayen for at checke hvormange der er i live og derefter ændrer deres state
 
-    private Cell[][] gamesArray;
 
     int lengthSide = GettableInfo.lengthSide;
     int lengthUpDown = GettableInfo.lengthSide;
@@ -18,19 +17,19 @@ public class GoThrough {
 
 
 
-    public GoThrough(Cell[][] gamesArray){
-        this.gamesArray = gamesArray;
+    public GoThrough(){
+
     }
 
 
-    public void creation(Cell[][] gamesArrayet){
+    public void creation(Cell[][] gamesArray){
         //Sikrer sig at den kun bliver kørt en gang
         if(this.counter<1){
 
             //Fill array with dead cells
             for (int i = 0; i < lengthSide-1 ; i++) {
                 for (int j = 0; j < lengthUpDown-1 ; j++) {
-                    gamesArrayet[i][j]=new Cell('d');
+                    gamesArray[i][j]=new Cell('d');
                 }
             }
             //Smider nogen nye Cells ind
@@ -43,12 +42,10 @@ public class GoThrough {
             System.out.println("--Creation has been run before-- ");
         }
     }
-    public void updateState(){
+    public void updateState(Cell[][] gamesArray){
 
         creation(gamesArray);
-
         //Printer i console
-
         printInConsole.printerino(gamesArray);
 
 
@@ -79,6 +76,7 @@ public class GoThrough {
 
             }
         }
+
         //her gør den dem i live.
         for (int i = 0; i <lengthSide-1 ; i++) {
             for (int j = 0; j <lengthUpDown-1 ; j++) {
@@ -90,11 +88,7 @@ public class GoThrough {
         //Printer igen
         printInConsole.printerino(gamesArray);
 
-        Scanner scanner = new Scanner(System.in);
-        String helloworld = scanner.next();
-        if(helloworld.equals("0")){
-            updateState();
-        }
+
     }
 
 
