@@ -49,7 +49,7 @@ public class GUIController {
             Singleton.makeCellAlive(3,5);
 
 
-            theTextArea.setText("hello");
+            theTextArea.setText(printInConsole.printerinoInGui(Singleton.getGamesArray()));
 
         }
 
@@ -57,6 +57,7 @@ public class GUIController {
             //går igennem den.
 
             goThrough.updateState(Singleton.getGamesArray());
+            theTextArea.setText(printInConsole.printerinoInGui(Singleton.getGamesArray()));
         }
 
     }

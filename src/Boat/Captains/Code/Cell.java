@@ -7,7 +7,8 @@ public class Cell {
     public Cell(char alive){
 
         if(alive =='a'){this.alive=true;
-            System.out.println("Cell created");}
+            //System.out.println("Cell created");
+            }
         if(alive =='d'){this.alive=false;}
 
     }

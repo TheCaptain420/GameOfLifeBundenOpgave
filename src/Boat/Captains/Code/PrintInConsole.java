@@ -17,7 +17,23 @@ public class PrintInConsole {
         }
     }
 
-    public String printerinoNotInSout(){
-        return "hello";
+
+    public String printerinoInGui(Cell[][] gamesArray){
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+
+        for (int i = 0; i < lengthSide-1 ; i++) {
+            for (int j = 0; j <(lengthUpDown-1) ; j++) {
+                if (gamesArray[i][j].isAlive()){stringBuilder.append("X ");}
+                else { stringBuilder.append("O "); }
+            }
+            stringBuilder.append("\n");
+        }
+
+
+
+        String finalString = stringBuilder.toString();
+        return finalString;
     }
 }

@@ -4,6 +4,8 @@ import static Boat.Captains.Code.GettableInfo.lengthSide;
 import static Boat.Captains.Code.GettableInfo.lengthUpDown;
 
 public class Singleton {
+    //Vær stolt;D
+
 
     protected static Cell[][] gamesArray = new Cell[10][10];
 
