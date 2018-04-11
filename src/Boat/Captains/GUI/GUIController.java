@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class GUIController {
     @FXML
@@ -32,6 +34,10 @@ public class GUIController {
 
     GettableInfo gettableInfo = new GettableInfo();
 
+    Timer timer;
+
+
+
 
     //Cell[][] gamesArray = gettableInfo.creatingTheArray();
 
@@ -43,6 +49,7 @@ public class GUIController {
             //Kalder databasen
             //Fylder gamesArray op.
             goThrough.updateState(Singleton.getGamesArray());
+
             Singleton.makeCellAlive(5,5);
             Singleton.makeCellAlive(2,3);
             Singleton.makeCellAlive(3,4);
@@ -58,6 +65,17 @@ public class GUIController {
 
             goThrough.updateState(Singleton.getGamesArray());
             theTextArea.setText(printInConsole.printerinoInGui(Singleton.getGamesArray()));
+        }
+
+
+        if(e.getSource()==btn_start){
+
+        }
+
+
+
+        if(e.getSource()==btn_stop){
+
         }
 
     }

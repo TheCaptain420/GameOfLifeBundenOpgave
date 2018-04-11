@@ -33,11 +33,7 @@ public class GoThrough {
                     gamesArray[i][j]=new Cell('d');
                 }
             }
-            //Smider nogen nye Cells ind
-            /*gamesArray[6][5] = new Cell('a');
-            gamesArray[1][5] = new Cell('a');
-            gamesArray[2][4] = new Cell('a');
-            gamesArray[2][6] = new Cell('a');*/
+
             this.counter++;
         }else{
             //System.out.println("--Creation has been run before-- ");
@@ -85,7 +81,6 @@ public class GoThrough {
             }
         }
 
-        //Printer igen
 
 
     }
