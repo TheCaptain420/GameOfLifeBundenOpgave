@@ -6,4 +6,4 @@ For at tilføjer egne (alive)Cell gå ind på GUIController-handleButtonAction o
 
   
 Kan ikke få timer til at virke, aner ikke hvordan den skulle bruges, så "start" og "stop" virker ikke.  
-[https://i.imgur.com/Ivpko1Q.jpg]
+!(https://i.imgur.com/Ivpko1Q.jpg)
